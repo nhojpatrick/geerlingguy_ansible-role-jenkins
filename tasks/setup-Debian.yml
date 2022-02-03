@@ -1,7 +1,7 @@
 ---
 - name: Ensure dependencies are installed.
   become: True
-  apt:
+  package:
     name:
       - curl
       - apt-transport-https
@@ -50,7 +50,7 @@
 
 - name: Ensure Jenkins is installed.
   become: True
-  apt:
+  package:
     name: jenkins
     state: "{{ jenkins_package_state }}"
   notify: configure default users
